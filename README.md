@@ -14,82 +14,29 @@ $ python --version
 Python 2.7.9
 ```
 
-### Prerequisites
+### Bisection Method
+Bisection Menthod is a root finding method that solves the form: f(x) = 0. 
+* INPUTS: function (func), low guess (a), high guess (b), tolerance of error (tol), MAX number of iterations (N)
+* CONDITIONS: f(x) must be continuous and defined on an interval [a,b], f(b)*f(b) < 0,
+              a < b
+* OUTPUT: Value which differs from a root of f(x) = 0 by less than tol
 
-What things you need to install the software and how to install them
-
+The current fucntion for demonstration is: f(x) = x^3 - x - 2
+* Note this can be changed under:
 ```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+def f(x):
+     return (math.pow(x,3) - x - 2)
 ```
 
-And repeat
-
+The current low guess, high guess, and tol for demonstration is (1, 2, 10^-5) respectively
+* Note these can be changed under 
 ```
-until finished
+TOL = math.pow(10,-5)
+A = 1
+B = 2
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+Run from command line:
 ```
-Give an example
+$ ./bisection.py
+Bisection method soln: x = 1.52138519287
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
