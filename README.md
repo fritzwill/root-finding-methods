@@ -1,4 +1,4 @@
-# Root_Finding_Techniques
+# root-finding-methods
 Utilizing root solving techniques such as:
 * Bisection Method
 * Fixed-Point Method
