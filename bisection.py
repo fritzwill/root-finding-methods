@@ -1,9 +1,8 @@
 #!/usr/bin/env python2.7
 
-# Will Fritz
 # 9/28/2017
 # Finds the root, or solution, of the form f(x) = 0. It uses:
-# abs((w(n)-w(n-q))/w(n)) <= 10^-5
+# abs((w(n)-w(n-q))/w(n)) <= 10^-5 as the tolerance
 
 import math
 
