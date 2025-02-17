@@ -9,11 +9,12 @@ import math
 def f(x):
     return (1/math.tan(x)) - (1/x) + x
     
-def fixedPoint(func,  approx, tol):
-    while True:
+def fixedPoint(func,  approx, tol, N):
+    for i in range(0, N):
         p = func(approx)
         if abs(p-approx) < tol:
             return p
         approx = p
+    return "Method failed after {} iterations".format(N)
 
-print fixedPoint(f, 4.6, 10**-4) 
+print "Fixed point solution: x =", fixedPoint(f, 4.6, 10**-4, 100) 

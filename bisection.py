@@ -11,7 +11,7 @@ import math
 def f(x):
     return (-32.17/(2*math.pow(x,2)))*(((math.exp(x)-math.exp(-x))/2) - math.sin(x)) - 1.7
 
-def bisect(func, low, high, tol):
+def bisect(func, low, high, tol, N):
     # switch low and high if low is larger than high
     if low > high:
         low = temp
@@ -22,7 +22,7 @@ def bisect(func, low, high, tol):
         print "Check input for low and high guess (f(low) and f(high) must have different signs)"
     
     lastFuncVal = func(low)
-    while(True):
+    for i in range(0, N):
         mid = (high+low)/2.0
         if abs(func(mid) - lastFuncVal)/abs(func(mid)) <= tol:
             return mid
@@ -33,5 +33,6 @@ def bisect(func, low, high, tol):
         else:
             high = mid
         lastFuncVal = func(mid)
+    return "Method failed after {} iterations".format(N)
 
-print bisect(f, -1, -.001, math.pow(10,-5))
+print "Bisection method soln:, x =", bisect(f, -1, -.001, math.pow(10,-5), 100)
