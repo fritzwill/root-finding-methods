@@ -40,7 +40,7 @@ def f(x):
 ```
 
 Run from command line:
-```python
+```
 $ ./bisection.py
 Bisection method soln: x =  1.52138519287
 ```
@@ -67,7 +67,7 @@ def f(x):
 ```
 
 Run from command line:
-```python
+```
 $ ./fixedPoint.py
 Fixed point solution: x = 4.49340945791
 ```
@@ -100,7 +100,7 @@ def fprime(x):
 ```
 
 Run from command line:
-```python
+```
 $ ./newtons.py
 Newton's Method soln: x =  0.00681932148758
 ```
@@ -127,7 +127,7 @@ def f(x):
 ```
 
 Run from command line:
-```python
+```
 $ ./secant.py
 Secant method soln: x =  0.00681932406799
 ```
