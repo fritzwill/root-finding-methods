@@ -1,45 +1,34 @@
 #!/usr/bin/env python2.7
 
-# Will Fritz
 # 9/29/2017
-# program to find solution to equation, namely f(x), using newton's method
-# and secant method
+# program to find solution to equation, namely f(x) = 0, using newton's 
+# method
+
 import math
 import time
 
+# globals
+APPROX = 0.1
+TOL = 10**-5
+N = 100
+
+# functions we are using, namely f and f'
 def f(x):
     return math.pow((1+x),204)-440*x-1
 
 def fprime(x):
-    return 204*pow((x+1),203) - 500
+    return 204*math.pow((x+1),203) - 440
 
-def newtons(approx, tol, N):
+# Actual Newton's Method
+def newtons(approx, tol, n):
     p0 = approx
-    for i in range(0, N):
-        p = p0 - (f(p0)/fprime(p0))
+    for i in range(0, n):
+        p = p0 - (f(p0)/fprime(p0)) # this is the calculation of the guess
         if abs(p - p0) < tol:
             return p
         p0 = p
-    return "The method failed after {} iterations".format(N)
+    return "The method failed after {} iterations".format(n)
 
-def secant(p0, p1, tol, N):
-    for i in range(0, N):
-        p = p1 - ((f(p1)*(p1-p0))/(f(p1) - f(p0)))
-        if abs(p-p1) < tol:
-            return p
-        p0 = p1
-        p1 = p
-    return "Them method failed after {} iterations">format(N)        
-
-startTime = time.time()
-output = newtons(.1, pow(10, -5), 100)
-elapsedN = time.time() - startTime
-startTime2 = time.time()
-output1 = secant(.1,.09,pow(10,-5),100)
-elapsedS = time.time() - startTime2
-
-print "Newtons method soln: x =", output
-print "Newtons time in seconds: {}".format(elapsedN)
-
-print "Secant method soln: x =", output1
-print "Secant time in seconds: {}".format(elapsedS)
+# Call the method and print its answer
+output = newtons(APPROX, TOL, N)
+print "Newton's method soln: x = ", output
